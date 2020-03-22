@@ -19,14 +19,16 @@ function getAge(pet) {
   return new Date().getFullYear() - pet.bornOn;
 }
 
-const petsWithAge = pets.forEach(pet => pet.age = getAge(pet))
-console.log(petsWithAge);
+pets.forEach(pet => pet.age = getAge(pet))
+console.log(pets);
 
-const dogs = petsWithAge.find(pet => {
+const dogs = pets.filter(pet => {
   return pet.type == `dog`
 });
 console.log(dogs);
-const jasper = petsWithAge.filter((pet) => {
-  pet.name == `jaspe`
+const jasper = pets.filter((pet) => {
+  return pet.name === `Jasper`;
+
 });
-console.log(`Jasper is   $(jasper.age) years old`);
+const age = pet.age;
+console.log(`Jasper is   ${age} years old`);
